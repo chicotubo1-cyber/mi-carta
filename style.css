@@ -1,0 +1,73 @@
+body {
+    background: linear-gradient(to bottom, #ff9aa2, #ffb7b2);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.envelope {
+    width: 300px;
+    height: 200px;
+    position: relative;
+    background: #fff;
+    border: 2px solid #d9534f;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease-in-out;
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100px;
+    background: #d9534f;
+    transform-origin: top;
+    transform: rotateX(0deg);
+    transition: transform 0.6s ease-in-out;
+    z-index: 2;
+}
+
+.letter {
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-in-out;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
+    z-index: 1;
+}
+
+.envelope.open .flap {
+    transform: rotateX(-180deg);
+}
+
+.envelope.open .letter {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background: #c9302c;
+}
